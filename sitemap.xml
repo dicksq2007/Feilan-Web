@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://flgj.net/en/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flgj.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flgj.net/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flgj.net/"/>
+  </url>
+  <url>
+    <loc>https://flgj.net/zh/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flgj.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flgj.net/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flgj.net/"/>
+  </url>
+  <url>
+    <loc>https://flgj.net/privacy-policy.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://flgj.net/terms-of-service.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
