@@ -1,9 +1,11 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "feilan-global-site",
+  // 你的 Worker 名称，与截图中的“项目名称”保持一致
+  "name": "feilan-web",
+  // 兼容性日期，保持默认即可
   "compatibility_date": "2026-10-27",
+  // 关键配置：告诉 Cloudflare 你的静态文件在哪个目录
   "assets": {
-    "directory": ".",
-    "not_found_handling": "404-page"
+    // 因为你上传了 index.html 等文件，所以这里填 "./" 代表当前根目录
+    "directory": "./"
   }
 }
