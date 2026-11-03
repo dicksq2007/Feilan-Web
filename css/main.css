@@ -329,3 +329,9 @@ footer{background:#032E57;color:#8FAEC8;padding:56px 0 30px}
     padding: 20px !important;
     box-sizing: border-box !important; 
 }
+@media (max-width: 760px) {
+    .qr-card {
+        width: 200px !important; 
+        height: 200px !important;
+    }
+}
