@@ -31,6 +31,36 @@
     height: auto !important;
     object-fit: contain !important; /* 确保图片比例 */
   }
+
+  /* ===== 医疗旅游 Medical Tours · 区域手风琴+紧凑列表 ===== */
+  .tour-region{border:1px solid #E4EDF4;border-radius:16px;background:#fff;margin-top:16px;overflow:hidden;box-shadow:0 6px 18px rgba(10,47,88,.06);transition:box-shadow .3s}
+  .tour-region:hover{box-shadow:0 10px 26px rgba(10,47,88,.10)}
+  .tour-region>summary{display:block;cursor:pointer;list-style:none;padding:20px 24px}
+  .tour-region>summary::-webkit-details-marker{display:none}
+  .tour-region-head{display:flex;align-items:flex-start;gap:18px}
+  .tour-region-head h3{margin:0;font-size:clamp(18px,2vw,24px);color:var(--deep);white-space:nowrap;padding-top:2px}
+  .tour-region-head h3 span{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--blue);background:linear-gradient(92deg,#F2F8FD,#E9F3FA);border-radius:999px;padding:4px 11px;margin-left:10px;vertical-align:middle}
+  .tour-region-head p{flex:1;min-width:280px;margin:0;font-size:13.5px;line-height:1.7;color:#5A7186}
+  .tour-chev{flex:none;width:34px;height:34px;border-radius:50%;background:linear-gradient(92deg,var(--deep),var(--blue));color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;transition:transform .3s;margin-top:2px;box-shadow:0 6px 14px rgba(10,47,88,.22)}
+  .tour-region[open] .tour-chev{transform:rotate(45deg)}
+  .tour-region[open]>summary{padding-bottom:14px}
+  .tour-rows{border-top:1px solid #EAF1F7;padding:4px 12px 8px}
+  .tour-row{border-bottom:1px solid #EEF4F9}
+  .tour-row:last-child{border-bottom:none}
+  .tour-row>summary{display:flex;align-items:center;gap:14px;padding:11px 12px;cursor:pointer;list-style:none;border-radius:12px;transition:background .2s}
+  .tour-row>summary::-webkit-details-marker{display:none}
+  .tour-row>summary:hover{background:#F4F9FD}
+  .tour-row img{width:80px;height:60px;object-fit:cover;border-radius:10px;flex:none;box-shadow:0 3px 8px rgba(10,47,88,.12)}
+  .tr-text{flex:1;min-width:0}
+  .tr-text b{display:block;font-size:15px;color:var(--deep)}
+  .tr-text i{display:block;font-style:normal;font-size:12.5px;color:#7A93A8;margin-top:2px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tr-arrow{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid #C9D9E6;color:var(--blue);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all .3s;line-height:1}
+  .tour-row[open] .tr-arrow{transform:rotate(45deg);background:var(--blue);color:#fff;border-color:transparent}
+  .tour-row-body{padding:2px 14px 16px 106px}
+  .tour-row-body p{margin:0 0 10px;font-size:13.5px;line-height:1.75;color:#3D5266}
+  .tour-pair{background:linear-gradient(92deg,#F2F8FD,#E9F3FA);border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--deep);margin:0}
+  .tour-pair b{color:var(--blue)}
+  @media(max-width:640px){.tour-region>summary{padding:16px}.tour-region-head{flex-wrap:wrap}.tour-row-body{padding-left:14px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://flgj.net/#org", "name": "Hangzhou Feilan Global Travel Co., Ltd.", "url": "https://flgj.net/en/", "logo": "https://flgj.net/logo_mark.png", "address": {"@type": "PostalAddress", "streetAddress": "No. 189 Tongbei Road, Ningwei Street, Xiaoshan District", "addressLocality": "Hangzhou", "addressRegion": "Zhejiang", "addressCountry": "CN"}, "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "contact@flgj.net", "availableLanguage": ["en", "zh"]}}, {"@type": "MedicalBusiness", "@id": "https://flgj.net/#medbiz", "name": "Feilan Global", "parentOrganization": {"@id": "https://flgj.net/#org"}, "url": "https://flgj.net/en/", "description": "Medical information consultation and medical coordination services connecting international patients with healthcare providers in China.", "areaServed": ["Nordic countries", "Southeast Asia", "China"]}]}</script>
 </head>
@@ -217,553 +247,361 @@
   <div class="container">
     <div class="reveal"><span class="eyebrow">Medical Tourism</span>
     <h2>Journeys of Healing: Discover China on Your Way to Recovery</h2>
-    <p class="lead">Where world-class care meets world-class travel — alongside your treatment, our professional team accompanies you through the most celebrated landscapes of Shanghai, Zhejiang and Yunnan. Click any card for details and care pairings.</p></div>
-    <div class="tour-tabs" role="tablist">
-      <button class="tour-tab on" data-tab="sh">Shanghai<span>TOP 10</span></button>
-      <button class="tour-tab" data-tab="zj">Zhejiang<span>TOP 10</span></button>
-      <button class="tour-tab" data-tab="yn">Yunnan<span>TOP 10</span></button>
-    </div>
-    <div class="tour-panel" id="tour-sh">
-      <div class="tour-region-head"><h3>Shanghai<span>TOP 10</span></h3><p>China's economic and cultural heart, where East meets West. Historic Bund facades face the futuristic Lujiazui skyline across the Huangpu River, and shikumen lanes live on beside gleaming skyscrapers.</p></div>
-      <div class="tour-strip-wrap">
-        <button class="tour-arrow left" aria-label="previous">&#8249;</button>
-        <div class="tour-strip">
-        <article class="tour-card" data-modal="m-shanghai-the-bund" role="button" tabindex="0" aria-label="The Bund">
-          <img src="/assets/tours/shanghai-the-bund.jpg" alt="The Bund" loading="lazy">
-          <span class="tour-info"><b>The Bund</b><i>A gallery of global architecture on the Huangpu waterfront</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-yu-garden" role="button" tabindex="0" aria-label="Yu Garden & City God Temple">
-          <img src="/assets/tours/shanghai-yu-garden.jpg" alt="Yu Garden & City God Temple" loading="lazy">
-          <span class="tour-info"><b>Yu Garden & City God Temple</b><i>A Ming-dynasty classical garden in the heart of old Shanghai</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-oriental-pearl" role="button" tabindex="0" aria-label="Oriental Pearl TV Tower">
-          <img src="/assets/tours/shanghai-oriental-pearl.jpg" alt="Oriental Pearl TV Tower" loading="lazy">
-          <span class="tour-info"><b>Oriental Pearl TV Tower</b><i>Shanghai's iconic tower with 360° views over both banks</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-museum" role="button" tabindex="0" aria-label="Shanghai Museum">
-          <img src="/assets/tours/shanghai-museum.jpg" alt="Shanghai Museum" loading="lazy">
-          <span class="tour-info"><b>Shanghai Museum</b><i>One of China's finest museums of ancient art</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-tianzifang" role="button" tabindex="0" aria-label="Tianzifang">
-          <img src="/assets/tours/shanghai-tianzifang.jpg" alt="Tianzifang" loading="lazy">
-          <span class="tour-info"><b>Tianzifang</b><i>An artsy labyrinth of shikumen lanes</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-nanjing-road" role="button" tabindex="0" aria-label="Nanjing Road Pedestrian Street">
-          <img src="/assets/tours/shanghai-nanjing-road.jpg" alt="Nanjing Road Pedestrian Street" loading="lazy">
-          <span class="tour-info"><b>Nanjing Road Pedestrian Street</b><i>China's No.1 commercial street, glittering with neon</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-xintiandi" role="button" tabindex="0" aria-label="Xintiandi">
-          <img src="/assets/tours/shanghai-xintiandi.jpg" alt="Xintiandi" loading="lazy">
-          <span class="tour-info"><b>Xintiandi</b><i>Where shikumen heritage meets modern lifestyle</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-wukang-road" role="button" tabindex="0" aria-label="Wukang Road Historic Area">
-          <img src="/assets/tours/shanghai-wukang-road.jpg" alt="Wukang Road Historic Area" loading="lazy">
-          <span class="tour-info"><b>Wukang Road Historic Area</b><i>An open-air museum of century-old villas under plane trees</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-tower" role="button" tabindex="0" aria-label="Shanghai Tower">
-          <img src="/assets/tours/shanghai-tower.jpg" alt="Shanghai Tower" loading="lazy">
-          <span class="tour-info"><b>Shanghai Tower</b><i>China's tallest building — the city at cloud level</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-shanghai-zhujiajiao" role="button" tabindex="0" aria-label="Zhujiajiao Water Town">
-          <img src="/assets/tours/shanghai-zhujiajiao.jpg" alt="Zhujiajiao Water Town" loading="lazy">
-          <span class="tour-info"><b>Zhujiajiao Water Town</b><i>Shanghai's 'Venice' — 1,700 years of canal town heritage</i></span>
-        </article>
-        </div>
-        <button class="tour-arrow right" aria-label="next">&#8250;</button>
+    <p class="lead">Where world-class care meets world-class travel — alongside your treatment, our professional team accompanies you through the most celebrated landscapes of Shanghai, Zhejiang and Yunnan. Expand each region to explore its TOP 10 attractions and care pairings.</p></div>
+  <details class="tour-region reveal">
+    <summary>
+      <div class="tour-region-head"><h3>Shanghai<span>TOP 10</span></h3><p>China's economic and cultural heart, where East meets West. Historic Bund facades face the futuristic Lujiazui skyline across the Huangpu River, and shikumen lanes live on beside gleaming skyscrapers.</p><span class="tour-chev">+</span></div>
+    </summary>
+    <div class="tour-rows">
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-the-bund.jpg" alt="The Bund" loading="lazy">
+        <span class="tr-text"><b>The Bund</b><i>A gallery of global architecture on the Huangpu waterfront</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Stretching 1.5 km along the Huangpu River, the Bund is lined with 52 grand buildings in Gothic, Baroque and Neoclassical styles — an open-air museum of the city's cosmopolitan past, facing the futuristic Lujiazui skyline.</p>
+        <p class="tour-pair"><b>Pair with：</b>Treatment at a Grade 3A hospital International Medical Department + a sunset riverside recovery walk</p>
       </div>
-    </div>
-    <div class="tour-panel" id="tour-zj" hidden>
-      <div class="tour-region-head"><h3>Zhejiang<span>TOP 10</span></h3><p>The essence of the Jiangnan water country and the heartland of China's digital economy. From the poetic West Lake to Wuzhen's canals, from sacred Mount Putuo to Yandang's peaks, landscape and heritage weave into one.</p></div>
-      <div class="tour-strip-wrap">
-        <button class="tour-arrow left" aria-label="previous">&#8249;</button>
-        <div class="tour-strip">
-        <article class="tour-card" data-modal="m-zhejiang-west-lake" role="button" tabindex="0" aria-label="West Lake">
-          <img src="/assets/tours/zhejiang-west-lake.jpg" alt="West Lake" loading="lazy">
-          <span class="tour-info"><b>West Lake</b><i>A UNESCO World Heritage 'paradise on earth'</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-lingyin-temple" role="button" tabindex="0" aria-label="Lingyin Temple & Feilai Feng">
-          <img src="/assets/tours/zhejiang-lingyin-temple.jpg" alt="Lingyin Temple & Feilai Feng" loading="lazy">
-          <span class="tour-info"><b>Lingyin Temple & Feilai Feng</b><i>A 1,700-year-old Zen sanctuary by West Lake</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-wuzhen" role="button" tabindex="0" aria-label="Wuzhen Water Town">
-          <img src="/assets/tours/zhejiang-wuzhen.jpg" alt="Wuzhen Water Town" loading="lazy">
-          <span class="tour-info"><b>Wuzhen Water Town</b><i>China's best-preserved water town</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-xitang" role="button" tabindex="0" aria-label="Xitang Ancient Town">
-          <img src="/assets/tours/zhejiang-xitang.jpg" alt="Xitang Ancient Town" loading="lazy">
-          <span class="tour-info"><b>Xitang Ancient Town</b><i>A thousand-year-old "living" water town</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-putuo-mountain" role="button" tabindex="0" aria-label="Mount Putuo">
-          <img src="/assets/tours/zhejiang-putuo-mountain.jpg" alt="Mount Putuo" loading="lazy">
-          <span class="tour-info"><b>Mount Putuo</b><i>A sacred Buddhist island in the East China Sea</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-qiandao-lake" role="button" tabindex="0" aria-label="Qiandao Lake">
-          <img src="/assets/tours/zhejiang-qiandao-lake.jpg" alt="Qiandao Lake" loading="lazy">
-          <span class="tour-info"><b>Qiandao Lake</b><i>1,078 emerald islands on crystal-clear water</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-yandang-mountain" role="button" tabindex="0" aria-label="Yandang Mountain">
-          <img src="/assets/tours/zhejiang-yandang-mountain.jpg" alt="Yandang Mountain" loading="lazy">
-          <span class="tour-info"><b>Yandang Mountain</b><i>A UNESCO Global Geopark of peaks and waterfalls</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-moganshan" role="button" tabindex="0" aria-label="Moganshan">
-          <img src="/assets/tours/zhejiang-moganshan.jpg" alt="Moganshan" loading="lazy">
-          <span class="tour-info"><b>Moganshan</b><i>A century-old hill resort and China's boutique-stay capital</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-hengdian" role="button" tabindex="0" aria-label="Hengdian World Studios">
-          <img src="/assets/tours/zhejiang-hengdian.jpg" alt="Hengdian World Studios" loading="lazy">
-          <span class="tour-info"><b>Hengdian World Studios</b><i>The world's largest film studio — China's Hollywood</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-zhejiang-qiantang-tide" role="button" tabindex="0" aria-label="Qiantang River Tidal Bore">
-          <img src="/assets/tours/zhejiang-qiantang-tide.jpg" alt="Qiantang River Tidal Bore" loading="lazy">
-          <span class="tour-info"><b>Qiantang River Tidal Bore</b><i>The world's most spectacular tidal bore</i></span>
-        </article>
-        </div>
-        <button class="tour-arrow right" aria-label="next">&#8250;</button>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-yu-garden.jpg" alt="Yu Garden & City God Temple" loading="lazy">
+        <span class="tr-text"><b>Yu Garden & City God Temple</b><i>A Ming-dynasty classical garden in the heart of old Shanghai</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Built in the Ming dynasty, Yu Garden is Shanghai's only surviving classical garden of winding corridors, rockeries and koi ponds. The surrounding bazaar teems with time-honored eateries and traditional crafts.</p>
+        <p class="tour-pair"><b>Pair with：</b>A gentle half-day garden stroll after your health check-up</p>
       </div>
-    </div>
-    <div class="tour-panel" id="tour-yn" hidden>
-      <div class="tour-region-head"><h3>Yunnan<span>TOP 10</span></h3><p>China's most culturally colorful province — a kingdom of plants and wildlife. Snow mountains, lakes, rice terraces, rainforests and ancient towns unfold under an eternal-spring climate: an ideal land for wellness travel.</p></div>
-      <div class="tour-strip-wrap">
-        <button class="tour-arrow left" aria-label="previous">&#8249;</button>
-        <div class="tour-strip">
-        <article class="tour-card" data-modal="m-yunnan-lijiang-old-town" role="button" tabindex="0" aria-label="Lijiang Old Town">
-          <img src="/assets/tours/yunnan-lijiang-old-town.jpg" alt="Lijiang Old Town" loading="lazy">
-          <span class="tour-info"><b>Lijiang Old Town</b><i>A UNESCO-listed Naxi gem beneath the snow mountains</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-jade-dragon-mountain" role="button" tabindex="0" aria-label="Jade Dragon Snow Mountain">
-          <img src="/assets/tours/yunnan-jade-dragon-mountain.jpg" alt="Jade Dragon Snow Mountain" loading="lazy">
-          <span class="tour-info"><b>Jade Dragon Snow Mountain</b><i>A sacred snow range with turquoise alpine lakes</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-erhai-lake" role="button" tabindex="0" aria-label="Erhai Lake">
-          <img src="/assets/tours/yunnan-erhai-lake.jpg" alt="Erhai Lake" loading="lazy">
-          <span class="tour-info"><b>Erhai Lake</b><i>Dali's 'highland pearl' between mountain and town</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-stone-forest" role="button" tabindex="0" aria-label="Stone Forest (Shilin)">
-          <img src="/assets/tours/yunnan-stone-forest.jpg" alt="Stone Forest (Shilin)" loading="lazy">
-          <span class="tour-info"><b>Stone Forest (Shilin)</b><i>A 270-million-year-old karst wonder, UNESCO Natural Heritage</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-pudacuo-park" role="button" tabindex="0" aria-label="Pudacuo National Park">
-          <img src="/assets/tours/yunnan-pudacuo-park.jpg" alt="Pudacuo National Park" loading="lazy">
-          <span class="tour-info"><b>Pudacuo National Park</b><i>Shangri-La's alpine lake and forest sanctuary</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-lugu-lake" role="button" tabindex="0" aria-label="Lugu Lake">
-          <img src="/assets/tours/yunnan-lugu-lake.jpg" alt="Lugu Lake" loading="lazy">
-          <span class="tour-info"><b>Lugu Lake</b><i>A crystal 'highland pearl' of the Mosuo people</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-three-pagodas" role="button" tabindex="0" aria-label="Three Pagodas of Chongsheng Temple">
-          <img src="/assets/tours/yunnan-three-pagodas.jpg" alt="Three Pagodas of Chongsheng Temple" loading="lazy">
-          <span class="tour-info"><b>Three Pagodas of Chongsheng Temple</b><i>Dali's thousand-year landmark mirrored in the lake</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-yuanyang-terraces" role="button" tabindex="0" aria-label="Yuanyang Rice Terraces">
-          <img src="/assets/tours/yunnan-yuanyang-terraces.jpg" alt="Yuanyang Rice Terraces" loading="lazy">
-          <span class="tour-info"><b>Yuanyang Rice Terraces</b><i>A millennium of Hani farming sculpted into the mountains</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-xishuangbanna" role="button" tabindex="0" aria-label="Xishuangbanna">
-          <img src="/assets/tours/yunnan-xishuangbanna.jpg" alt="Xishuangbanna" loading="lazy">
-          <span class="tour-info"><b>Xishuangbanna</b><i>China's only tropical rainforest kingdom</i></span>
-        </article>
-        <article class="tour-card" data-modal="m-yunnan-tiger-leaping-gorge" role="button" tabindex="0" aria-label="Tiger Leaping Gorge">
-          <img src="/assets/tours/yunnan-tiger-leaping-gorge.jpg" alt="Tiger Leaping Gorge" loading="lazy">
-          <span class="tour-info"><b>Tiger Leaping Gorge</b><i>One of the world's deepest gorges on the Jinsha River</i></span>
-        </article>
-        </div>
-        <button class="tour-arrow right" aria-label="next">&#8250;</button>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-oriental-pearl.jpg" alt="Oriental Pearl TV Tower" loading="lazy">
+        <span class="tr-text"><b>Oriental Pearl TV Tower</b><i>Shanghai's iconic tower with 360° views over both banks</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Rising 468 meters in Lujiazui, the Oriental Pearl was China's tallest tower when completed. Its observation decks and glass skywalk offer a full panorama of the river and skyline.</p>
+        <p class="tour-pair"><b>Pair with：</b>Light-activity sightseeing during recovery from ophthalmology or ENT procedures</p>
       </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-museum.jpg" alt="Shanghai Museum" loading="lazy">
+        <span class="tr-text"><b>Shanghai Museum</b><i>One of China's finest museums of ancient art</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Housing over a million objects, Shanghai Museum is celebrated worldwide for its bronzes, ceramics, paintings and jade. Its round-top, square-base design itself symbolizes the ancient cosmos.</p>
+        <p class="tour-pair"><b>Pair with：</b>An indoor cultural visit between appointments — perfect in any season</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-tianzifang.jpg" alt="Tianzifang" loading="lazy">
+        <span class="tr-text"><b>Tianzifang</b><i>An artsy labyrinth of shikumen lanes</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Converted from century-old shikumen lanes, Tianzifang's alleys are packed with galleries, studios, cafés and boutiques — the most charming corner of Shanghai's creative scene.</p>
+        <p class="tour-pair"><b>Pair with：</b>A short walking tour between dental treatment sessions</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-nanjing-road.jpg" alt="Nanjing Road Pedestrian Street" loading="lazy">
+        <span class="tr-text"><b>Nanjing Road Pedestrian Street</b><i>China's No.1 commercial street, glittering with neon</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Shanghai's busiest shopping street mixes century-old stores with flagship boutiques. After dark its neon lights up the boulevard — an easy, level route with sightseeing trains available.</p>
+        <p class="tour-pair"><b>Pair with：</b>A flat, relaxed walking itinerary during post-surgical recovery</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-xintiandi.jpg" alt="Xintiandi" loading="lazy">
+        <span class="tr-text"><b>Xintiandi</b><i>Where shikumen heritage meets modern lifestyle</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Xintiandi restored entire blocks of 1920s shikumen houses into a stylish district of restaurants, cafés and boutiques — the signature blend of heritage and nightlife.</p>
+        <p class="tour-pair"><b>Pair with：</b>An ideal venue for business receptions and partnership dinners</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-wukang-road.jpg" alt="Wukang Road Historic Area" loading="lazy">
+        <span class="tr-text"><b>Wukang Road Historic Area</b><i>An open-air museum of century-old villas under plane trees</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Just over a kilometer long, Wukang Road gathers 37 protected historic buildings including the famed Wukang Mansion — its French and Spanish villas beneath plane trees make Shanghai's most elegant city walk.</p>
+        <p class="tour-pair"><b>Pair with：</b>A low-intensity afternoon walk after your check-up</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-tower.jpg" alt="Shanghai Tower" loading="lazy">
+        <span class="tr-text"><b>Shanghai Tower</b><i>China's tallest building — the city at cloud level</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>At 632 meters, Shanghai Tower is China's tallest and the world's third-tallest skyscraper. The 'Top of Shanghai' observatory on the 118th floor is reached in 55 seconds by one of the world's fastest elevators.</p>
+        <p class="tour-pair"><b>Pair with：</b>City sightseeing for guests in good physical condition</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/shanghai-zhujiajiao.jpg" alt="Zhujiajiao Water Town" loading="lazy">
+        <span class="tr-text"><b>Zhujiajiao Water Town</b><i>Shanghai's 'Venice' — 1,700 years of canal town heritage</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Nicknamed Shanghai's Venice, Zhujiajiao has grown along its canals for 1,700 years, with 36 stone bridges including the city's largest. A rowing-boat ride reveals classic Jiangnan water-town life.</p>
+        <p class="tour-pair"><b>Pair with：</b>A weekend water-town getaway for rest and recuperation</p>
+      </div>
+    </details>
     </div>
+  </details>
+  <details class="tour-region reveal">
+    <summary>
+      <div class="tour-region-head"><h3>Zhejiang<span>TOP 10</span></h3><p>The essence of the Jiangnan water country and the heartland of China's digital economy. From the poetic West Lake to Wuzhen's canals, from sacred Mount Putuo to Yandang's peaks, landscape and heritage weave into one.</p><span class="tour-chev">+</span></div>
+    </summary>
+    <div class="tour-rows">
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-west-lake.jpg" alt="West Lake" loading="lazy">
+        <span class="tr-text"><b>West Lake</b><i>A UNESCO World Heritage 'paradise on earth'</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Immortalized by poets as 'paradise on earth', West Lake is a UNESCO World Heritage Site. Its Ten Scenes shift with the seasons — strolling the Su Causeway or cruising the lake is pure tranquility.</p>
+        <p class="tour-pair"><b>Pair with：</b>Our signature premium check-up + lakeside wellness walk</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-lingyin-temple.jpg" alt="Lingyin Temple & Feilai Feng" loading="lazy">
+        <span class="tr-text"><b>Lingyin Temple & Feilai Feng</b><i>A 1,700-year-old Zen sanctuary by West Lake</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Founded in the Eastern Jin dynasty over 1,700 years ago, Lingyin Temple is one of China's most important Chan Buddhist temples. The Feilai Feng grottoes preserve exquisite Song-Yuan carvings amid ancient trees.</p>
+        <p class="tour-pair"><b>Pair with：</b>TCM wellness conditioning + a mindfulness retreat</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-wuzhen.jpg" alt="Wuzhen Water Town" loading="lazy">
+        <span class="tr-text"><b>Wuzhen Water Town</b><i>China's best-preserved water town</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Preserving its late-Qing streetscape intact, Wuzhen's cross-shaped canals divide the town into quarters of whitewashed houses and swaying wooden boats — famed as 'China's last riverside home'.</p>
+        <p class="tour-pair"><b>Pair with：</b>A slow-living convalescent stay by the water</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-xitang.jpg" alt="Xitang Ancient Town" loading="lazy">
+        <span class="tr-text"><b>Xitang Ancient Town</b><i>A thousand-year-old "living" water town</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>A thousand years old, Xitang is famed for its many bridges, lanes and covered riverside corridors. The one-kilometer Misty Rain Corridor keeps strollers dry in any weather — a living picture of Jiangnan life.</p>
+        <p class="tour-pair"><b>Pair with：</b>A photogenic retreat for wellness travelers</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-putuo-mountain.jpg" alt="Mount Putuo" loading="lazy">
+        <span class="tr-text"><b>Mount Putuo</b><i>A sacred Buddhist island in the East China Sea</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>One of China's four sacred Buddhist mountains and the bodhimanda of Guanyin, Mount Putuo rises from the sea with ancient temples, golden beaches and a towering Guanyin statue — a sanctuary for body and mind.</p>
+        <p class="tour-pair"><b>Pair with：</b>A spiritual healing journey + seaside air therapy</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-qiandao-lake.jpg" alt="Qiandao Lake" loading="lazy">
+        <span class="tr-text"><b>Qiandao Lake</b><i>1,078 emerald islands on crystal-clear water</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Formed by the Xin'an River hydropower project, Qiandao Lake scatters 1,078 green islands across water of national first-class quality — cycling, boating and fresh fish cuisine make it a natural wellness hotspot.</p>
+        <p class="tour-pair"><b>Pair with：</b>Post-operative recovery in a forest-oxygen setting</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-yandang-mountain.jpg" alt="Yandang Mountain" loading="lazy">
+        <span class="tr-text"><b>Yandang Mountain</b><i>A UNESCO Global Geopark of peaks and waterfalls</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Shaped by volcanic eruptions 120 million years ago, Yandang Mountain is celebrated for dramatic peaks, caves and the 197-meter Dalongqiu Waterfall — the 'No.1 waterfall under heaven'.</p>
+        <p class="tour-pair"><b>Pair with：</b>Low-altitude hiking routes suitable for orthopedic recovery (with physician approval)</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-moganshan.jpg" alt="Moganshan" loading="lazy">
+        <span class="tr-text"><b>Moganshan</b><i>A century-old hill resort and China's boutique-stay capital</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Famed for bamboo forests, sea of clouds and springs, Moganshan has been a summer retreat since the late Qing, dotted with 200 historic villas — today the birthplace of China's boutique guesthouse culture.</p>
+        <p class="tour-pair"><b>Pair with：</b>A premium package of TCM therapy + mountain retreat</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-hengdian.jpg" alt="Hengdian World Studios" loading="lazy">
+        <span class="tr-text"><b>Hengdian World Studios</b><i>The world's largest film studio — China's Hollywood</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>The world's largest film and TV production base, Hengdian features a dozen full-scale sets spanning millennia — from Qin-dynasty palaces to Song streetscapes — a walk through cinematic history.</p>
+        <p class="tour-pair"><b>Pair with：</b>Entertainment for accompanying family while the patient rests</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/zhejiang-qiantang-tide.jpg" alt="Qiantang River Tidal Bore" loading="lazy">
+        <span class="tr-text"><b>Qiantang River Tidal Bore</b><i>The world's most spectacular tidal bore</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>The world's greatest tidal bore peaks around the 18th day of the eighth lunar month, when single-line, crossing and returning tides surge up the estuary — a spectacle famed since antiquity.</p>
+        <p class="tour-pair"><b>Pair with：</b>A seasonal natural wonder for autumn medical travelers</p>
+      </div>
+    </details>
+    </div>
+  </details>
+  <details class="tour-region reveal">
+    <summary>
+      <div class="tour-region-head"><h3>Yunnan<span>TOP 10</span></h3><p>China's most culturally colorful province — a kingdom of plants and wildlife. Snow mountains, lakes, rice terraces, rainforests and ancient towns unfold under an eternal-spring climate: an ideal land for wellness travel.</p><span class="tour-chev">+</span></div>
+    </summary>
+    <div class="tour-rows">
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-lijiang-old-town.jpg" alt="Lijiang Old Town" loading="lazy">
+        <span class="tr-text"><b>Lijiang Old Town</b><i>A UNESCO-listed Naxi gem beneath the snow mountains</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Founded in the late Song dynasty, Lijiang preserves China's most complete minority old-town fabric — a UNESCO site since 1997. Canals wind past wooden houses around Sifang Square, with Naxi music in the air.</p>
+        <p class="tour-pair"><b>Pair with：</b>Plateau-climate wellness stays (≈2,400 m altitude — subject to medical advice)</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-jade-dragon-mountain.jpg" alt="Jade Dragon Snow Mountain" loading="lazy">
+        <span class="tr-text"><b>Jade Dragon Snow Mountain</b><i>A sacred snow range with turquoise alpine lakes</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Thirteen peaks of Jade Dragon keep snow year-round above mirror-blue waters. A cable car reaches the 4,506 m glacier park for close views of the 5,596 m summit, sacred to the Naxi people.</p>
+        <p class="tour-pair"><b>Pair with：</b>Snow-mountain sightseeing for guests with good cardiopulmonary fitness (medical assessment required)</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-erhai-lake.jpg" alt="Erhai Lake" loading="lazy">
+        <span class="tr-text"><b>Erhai Lake</b><i>Dali's 'highland pearl' between mountain and town</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Shaped like an ear, Erhai is Yunnan's second-largest highland lake. Cycle or cruise its shores for the classic wind-flower-snow-moon vistas, with Bai villages along the water.</p>
+        <p class="tour-pair"><b>Pair with：</b>Gentle lakeside cycling routes during post-operative recovery</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-stone-forest.jpg" alt="Stone Forest (Shilin)" loading="lazy">
+        <span class="tr-text"><b>Stone Forest (Shilin)</b><i>A 270-million-year-old karst wonder, UNESCO Natural Heritage</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Carved over 270 million years, Shilin is the world's textbook example of karst pinnacles and a UNESCO Natural Heritage Site — a grey limestone 'forest' of towers and corridors that astounds every visitor.</p>
+        <p class="tour-pair"><b>Pair with：</b>A half-day natural wonder tour for guests treated in Kunming</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-pudacuo-park.jpg" alt="Pudacuo National Park" loading="lazy">
+        <span class="tr-text"><b>Pudacuo National Park</b><i>Shangri-La's alpine lake and forest sanctuary</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Mainland China's first national park, Pudacuo mirrors the sky in alpine lakes ringed by primeval forest and meadows — ablaze with azaleas in spring, 'the closest place to heaven'.</p>
+        <p class="tour-pair"><b>Pair with：</b>Forest-bathing wellness therapy (above 3,500 m — subject to medical advice)</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-lugu-lake.jpg" alt="Lugu Lake" loading="lazy">
+        <span class="tr-text"><b>Lugu Lake</b><i>A crystal 'highland pearl' of the Mosuo people</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>At 2,690 m, Lugu Lake's waters are famously limpid, home to the matrilineal Mosuo community. Ride a pig-trough canoe, cross the Walking-Marriage Bridge and sleep beneath starry skies.</p>
+        <p class="tour-pair"><b>Pair with：</b>A quiet convalescent retreat + minority culture immersion</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-three-pagodas.jpg" alt="Three Pagodas of Chongsheng Temple" loading="lazy">
+        <span class="tr-text"><b>Three Pagodas of Chongsheng Temple</b><i>Dali's thousand-year landmark mirrored in the lake</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Built in the Nanzhao kingdom, the Three Pagodas have watched over Dali for a millennium; the 69-meter Qianxun Pagoda is among China's tallest surviving ancient towers, mirrored famously in the park lake.</p>
+        <p class="tour-pair"><b>Pair with：</b>A cultural mindfulness stop on a Dali wellness itinerary</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-yuanyang-terraces.jpg" alt="Yuanyang Rice Terraces" loading="lazy">
+        <span class="tr-text"><b>Yuanyang Rice Terraces</b><i>A millennium of Hani farming sculpted into the mountains</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Hani farmers carved these terraces over 1,300 years — a UNESCO Cultural Landscape. In irrigation season the paddies mirror the sky in endless tiers, glowing at sunrise like sculptures of the earth.</p>
+        <p class="tour-pair"><b>Pair with：</b>A winter photography-focused wellness tour</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-xishuangbanna.jpg" alt="Xishuangbanna" loading="lazy">
+        <span class="tr-text"><b>Xishuangbanna</b><i>China's only tropical rainforest kingdom</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Home to China's only tropical-rainforest reserve, Xishuangbanna offers sky-tree canopy walks, wild elephants and the Dai Water-Splashing Festival — the perfect winter escape.</p>
+        <p class="tour-pair"><b>Pair with：</b>Winter warm-weather recuperation + TCM seasonal conditioning</p>
+      </div>
+    </details>
+    <details class="tour-row">
+      <summary>
+        <img src="/assets/tours/yunnan-tiger-leaping-gorge.jpg" alt="Tiger Leaping Gorge" loading="lazy">
+        <span class="tr-text"><b>Tiger Leaping Gorge</b><i>One of the world's deepest gorges on the Jinsha River</i></span>
+        <span class="tr-arrow">+</span>
+      </summary>
+      <div class="tour-row-body">
+        <p>Where the Jinsha River thunders between Jade Dragon and Haba snow mountains, Tiger Leaping Gorge plunges 3,900 m — among the deepest canyons on earth and a world-class trekking route.</p>
+        <p class="tour-pair"><b>Pair with：</b>Light trekking only for guests in excellent health (professional assessment required)</p>
+      </div>
+    </details>
+    </div>
+  </details>
     <p class="cost-note reveal">* Every itinerary is flexibly tailored to your treatment plan and physical condition, accompanied throughout by licensed guides and medically trained escorts. Plateau and trekking programs require physician approval.</p>
   </div>
 </section>
-<!-- 景点详情弹窗 Attraction detail modals -->
-  <div class="tour-modal" id="m-shanghai-the-bund" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="The Bund">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-the-bund.jpg" alt="The Bund">
-      <div class="tour-modal-text">
-        <h4>The Bund</h4>
-        <p class="tm-tagline">A gallery of global architecture on the Huangpu waterfront</p>
-        <p class="tm-body">Stretching 1.5 km along the Huangpu River, the Bund is lined with 52 grand buildings in Gothic, Baroque and Neoclassical styles — an open-air museum of the city's cosmopolitan past, facing the futuristic Lujiazui skyline.</p>
-        <p class="tour-pair"><b>Pair with：</b>Treatment at a Grade 3A hospital International Medical Department + a sunset riverside recovery walk</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-yu-garden" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Yu Garden & City God Temple">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-yu-garden.jpg" alt="Yu Garden & City God Temple">
-      <div class="tour-modal-text">
-        <h4>Yu Garden & City God Temple</h4>
-        <p class="tm-tagline">A Ming-dynasty classical garden in the heart of old Shanghai</p>
-        <p class="tm-body">Built in the Ming dynasty, Yu Garden is Shanghai's only surviving classical garden of winding corridors, rockeries and koi ponds. The surrounding bazaar teems with time-honored eateries and traditional crafts.</p>
-        <p class="tour-pair"><b>Pair with：</b>A gentle half-day garden stroll after your health check-up</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-oriental-pearl" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Oriental Pearl TV Tower">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-oriental-pearl.jpg" alt="Oriental Pearl TV Tower">
-      <div class="tour-modal-text">
-        <h4>Oriental Pearl TV Tower</h4>
-        <p class="tm-tagline">Shanghai's iconic tower with 360° views over both banks</p>
-        <p class="tm-body">Rising 468 meters in Lujiazui, the Oriental Pearl was China's tallest tower when completed. Its observation decks and glass skywalk offer a full panorama of the river and skyline.</p>
-        <p class="tour-pair"><b>Pair with：</b>Light-activity sightseeing during recovery from ophthalmology or ENT procedures</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-museum" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Shanghai Museum">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-museum.jpg" alt="Shanghai Museum">
-      <div class="tour-modal-text">
-        <h4>Shanghai Museum</h4>
-        <p class="tm-tagline">One of China's finest museums of ancient art</p>
-        <p class="tm-body">Housing over a million objects, Shanghai Museum is celebrated worldwide for its bronzes, ceramics, paintings and jade. Its round-top, square-base design itself symbolizes the ancient cosmos.</p>
-        <p class="tour-pair"><b>Pair with：</b>An indoor cultural visit between appointments — perfect in any season</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-tianzifang" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Tianzifang">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-tianzifang.jpg" alt="Tianzifang">
-      <div class="tour-modal-text">
-        <h4>Tianzifang</h4>
-        <p class="tm-tagline">An artsy labyrinth of shikumen lanes</p>
-        <p class="tm-body">Converted from century-old shikumen lanes, Tianzifang's alleys are packed with galleries, studios, cafés and boutiques — the most charming corner of Shanghai's creative scene.</p>
-        <p class="tour-pair"><b>Pair with：</b>A short walking tour between dental treatment sessions</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-nanjing-road" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Nanjing Road Pedestrian Street">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-nanjing-road.jpg" alt="Nanjing Road Pedestrian Street">
-      <div class="tour-modal-text">
-        <h4>Nanjing Road Pedestrian Street</h4>
-        <p class="tm-tagline">China's No.1 commercial street, glittering with neon</p>
-        <p class="tm-body">Shanghai's busiest shopping street mixes century-old stores with flagship boutiques. After dark its neon lights up the boulevard — an easy, level route with sightseeing trains available.</p>
-        <p class="tour-pair"><b>Pair with：</b>A flat, relaxed walking itinerary during post-surgical recovery</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-xintiandi" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Xintiandi">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-xintiandi.jpg" alt="Xintiandi">
-      <div class="tour-modal-text">
-        <h4>Xintiandi</h4>
-        <p class="tm-tagline">Where shikumen heritage meets modern lifestyle</p>
-        <p class="tm-body">Xintiandi restored entire blocks of 1920s shikumen houses into a stylish district of restaurants, cafés and boutiques — the signature blend of heritage and nightlife.</p>
-        <p class="tour-pair"><b>Pair with：</b>An ideal venue for business receptions and partnership dinners</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-wukang-road" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Wukang Road Historic Area">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-wukang-road.jpg" alt="Wukang Road Historic Area">
-      <div class="tour-modal-text">
-        <h4>Wukang Road Historic Area</h4>
-        <p class="tm-tagline">An open-air museum of century-old villas under plane trees</p>
-        <p class="tm-body">Just over a kilometer long, Wukang Road gathers 37 protected historic buildings including the famed Wukang Mansion — its French and Spanish villas beneath plane trees make Shanghai's most elegant city walk.</p>
-        <p class="tour-pair"><b>Pair with：</b>A low-intensity afternoon walk after your check-up</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-tower" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Shanghai Tower">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-tower.jpg" alt="Shanghai Tower">
-      <div class="tour-modal-text">
-        <h4>Shanghai Tower</h4>
-        <p class="tm-tagline">China's tallest building — the city at cloud level</p>
-        <p class="tm-body">At 632 meters, Shanghai Tower is China's tallest and the world's third-tallest skyscraper. The 'Top of Shanghai' observatory on the 118th floor is reached in 55 seconds by one of the world's fastest elevators.</p>
-        <p class="tour-pair"><b>Pair with：</b>City sightseeing for guests in good physical condition</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-shanghai-zhujiajiao" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Zhujiajiao Water Town">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/shanghai-zhujiajiao.jpg" alt="Zhujiajiao Water Town">
-      <div class="tour-modal-text">
-        <h4>Zhujiajiao Water Town</h4>
-        <p class="tm-tagline">Shanghai's 'Venice' — 1,700 years of canal town heritage</p>
-        <p class="tm-body">Nicknamed Shanghai's Venice, Zhujiajiao has grown along its canals for 1,700 years, with 36 stone bridges including the city's largest. A rowing-boat ride reveals classic Jiangnan water-town life.</p>
-        <p class="tour-pair"><b>Pair with：</b>A weekend water-town getaway for rest and recuperation</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-west-lake" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="West Lake">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-west-lake.jpg" alt="West Lake">
-      <div class="tour-modal-text">
-        <h4>West Lake</h4>
-        <p class="tm-tagline">A UNESCO World Heritage 'paradise on earth'</p>
-        <p class="tm-body">Immortalized by poets as 'paradise on earth', West Lake is a UNESCO World Heritage Site. Its Ten Scenes shift with the seasons — strolling the Su Causeway or cruising the lake is pure tranquility.</p>
-        <p class="tour-pair"><b>Pair with：</b>Our signature premium check-up + lakeside wellness walk</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-lingyin-temple" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Lingyin Temple & Feilai Feng">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-lingyin-temple.jpg" alt="Lingyin Temple & Feilai Feng">
-      <div class="tour-modal-text">
-        <h4>Lingyin Temple & Feilai Feng</h4>
-        <p class="tm-tagline">A 1,700-year-old Zen sanctuary by West Lake</p>
-        <p class="tm-body">Founded in the Eastern Jin dynasty over 1,700 years ago, Lingyin Temple is one of China's most important Chan Buddhist temples. The Feilai Feng grottoes preserve exquisite Song-Yuan carvings amid ancient trees.</p>
-        <p class="tour-pair"><b>Pair with：</b>TCM wellness conditioning + a mindfulness retreat</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-wuzhen" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Wuzhen Water Town">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-wuzhen.jpg" alt="Wuzhen Water Town">
-      <div class="tour-modal-text">
-        <h4>Wuzhen Water Town</h4>
-        <p class="tm-tagline">China's best-preserved water town</p>
-        <p class="tm-body">Preserving its late-Qing streetscape intact, Wuzhen's cross-shaped canals divide the town into quarters of whitewashed houses and swaying wooden boats — famed as 'China's last riverside home'.</p>
-        <p class="tour-pair"><b>Pair with：</b>A slow-living convalescent stay by the water</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-xitang" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Xitang Ancient Town">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-xitang.jpg" alt="Xitang Ancient Town">
-      <div class="tour-modal-text">
-        <h4>Xitang Ancient Town</h4>
-        <p class="tm-tagline">A thousand-year-old "living" water town</p>
-        <p class="tm-body">A thousand years old, Xitang is famed for its many bridges, lanes and covered riverside corridors. The one-kilometer Misty Rain Corridor keeps strollers dry in any weather — a living picture of Jiangnan life.</p>
-        <p class="tour-pair"><b>Pair with：</b>A photogenic retreat for wellness travelers</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-putuo-mountain" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Mount Putuo">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-putuo-mountain.jpg" alt="Mount Putuo">
-      <div class="tour-modal-text">
-        <h4>Mount Putuo</h4>
-        <p class="tm-tagline">A sacred Buddhist island in the East China Sea</p>
-        <p class="tm-body">One of China's four sacred Buddhist mountains and the bodhimanda of Guanyin, Mount Putuo rises from the sea with ancient temples, golden beaches and a towering Guanyin statue — a sanctuary for body and mind.</p>
-        <p class="tour-pair"><b>Pair with：</b>A spiritual healing journey + seaside air therapy</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-qiandao-lake" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Qiandao Lake">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-qiandao-lake.jpg" alt="Qiandao Lake">
-      <div class="tour-modal-text">
-        <h4>Qiandao Lake</h4>
-        <p class="tm-tagline">1,078 emerald islands on crystal-clear water</p>
-        <p class="tm-body">Formed by the Xin'an River hydropower project, Qiandao Lake scatters 1,078 green islands across water of national first-class quality — cycling, boating and fresh fish cuisine make it a natural wellness hotspot.</p>
-        <p class="tour-pair"><b>Pair with：</b>Post-operative recovery in a forest-oxygen setting</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-yandang-mountain" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Yandang Mountain">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-yandang-mountain.jpg" alt="Yandang Mountain">
-      <div class="tour-modal-text">
-        <h4>Yandang Mountain</h4>
-        <p class="tm-tagline">A UNESCO Global Geopark of peaks and waterfalls</p>
-        <p class="tm-body">Shaped by volcanic eruptions 120 million years ago, Yandang Mountain is celebrated for dramatic peaks, caves and the 197-meter Dalongqiu Waterfall — the 'No.1 waterfall under heaven'.</p>
-        <p class="tour-pair"><b>Pair with：</b>Low-altitude hiking routes suitable for orthopedic recovery (with physician approval)</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-moganshan" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Moganshan">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-moganshan.jpg" alt="Moganshan">
-      <div class="tour-modal-text">
-        <h4>Moganshan</h4>
-        <p class="tm-tagline">A century-old hill resort and China's boutique-stay capital</p>
-        <p class="tm-body">Famed for bamboo forests, sea of clouds and springs, Moganshan has been a summer retreat since the late Qing, dotted with 200 historic villas — today the birthplace of China's boutique guesthouse culture.</p>
-        <p class="tour-pair"><b>Pair with：</b>A premium package of TCM therapy + mountain retreat</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-hengdian" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Hengdian World Studios">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-hengdian.jpg" alt="Hengdian World Studios">
-      <div class="tour-modal-text">
-        <h4>Hengdian World Studios</h4>
-        <p class="tm-tagline">The world's largest film studio — China's Hollywood</p>
-        <p class="tm-body">The world's largest film and TV production base, Hengdian features a dozen full-scale sets spanning millennia — from Qin-dynasty palaces to Song streetscapes — a walk through cinematic history.</p>
-        <p class="tour-pair"><b>Pair with：</b>Entertainment for accompanying family while the patient rests</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-zhejiang-qiantang-tide" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Qiantang River Tidal Bore">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/zhejiang-qiantang-tide.jpg" alt="Qiantang River Tidal Bore">
-      <div class="tour-modal-text">
-        <h4>Qiantang River Tidal Bore</h4>
-        <p class="tm-tagline">The world's most spectacular tidal bore</p>
-        <p class="tm-body">The world's greatest tidal bore peaks around the 18th day of the eighth lunar month, when single-line, crossing and returning tides surge up the estuary — a spectacle famed since antiquity.</p>
-        <p class="tour-pair"><b>Pair with：</b>A seasonal natural wonder for autumn medical travelers</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-lijiang-old-town" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Lijiang Old Town">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-lijiang-old-town.jpg" alt="Lijiang Old Town">
-      <div class="tour-modal-text">
-        <h4>Lijiang Old Town</h4>
-        <p class="tm-tagline">A UNESCO-listed Naxi gem beneath the snow mountains</p>
-        <p class="tm-body">Founded in the late Song dynasty, Lijiang preserves China's most complete minority old-town fabric — a UNESCO site since 1997. Canals wind past wooden houses around Sifang Square, with Naxi music in the air.</p>
-        <p class="tour-pair"><b>Pair with：</b>Plateau-climate wellness stays (≈2,400 m altitude — subject to medical advice)</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-jade-dragon-mountain" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Jade Dragon Snow Mountain">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-jade-dragon-mountain.jpg" alt="Jade Dragon Snow Mountain">
-      <div class="tour-modal-text">
-        <h4>Jade Dragon Snow Mountain</h4>
-        <p class="tm-tagline">A sacred snow range with turquoise alpine lakes</p>
-        <p class="tm-body">Thirteen peaks of Jade Dragon keep snow year-round above mirror-blue waters. A cable car reaches the 4,506 m glacier park for close views of the 5,596 m summit, sacred to the Naxi people.</p>
-        <p class="tour-pair"><b>Pair with：</b>Snow-mountain sightseeing for guests with good cardiopulmonary fitness (medical assessment required)</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-erhai-lake" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Erhai Lake">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-erhai-lake.jpg" alt="Erhai Lake">
-      <div class="tour-modal-text">
-        <h4>Erhai Lake</h4>
-        <p class="tm-tagline">Dali's 'highland pearl' between mountain and town</p>
-        <p class="tm-body">Shaped like an ear, Erhai is Yunnan's second-largest highland lake. Cycle or cruise its shores for the classic wind-flower-snow-moon vistas, with Bai villages along the water.</p>
-        <p class="tour-pair"><b>Pair with：</b>Gentle lakeside cycling routes during post-operative recovery</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-stone-forest" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Stone Forest (Shilin)">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-stone-forest.jpg" alt="Stone Forest (Shilin)">
-      <div class="tour-modal-text">
-        <h4>Stone Forest (Shilin)</h4>
-        <p class="tm-tagline">A 270-million-year-old karst wonder, UNESCO Natural Heritage</p>
-        <p class="tm-body">Carved over 270 million years, Shilin is the world's textbook example of karst pinnacles and a UNESCO Natural Heritage Site — a grey limestone 'forest' of towers and corridors that astounds every visitor.</p>
-        <p class="tour-pair"><b>Pair with：</b>A half-day natural wonder tour for guests treated in Kunming</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-pudacuo-park" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Pudacuo National Park">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-pudacuo-park.jpg" alt="Pudacuo National Park">
-      <div class="tour-modal-text">
-        <h4>Pudacuo National Park</h4>
-        <p class="tm-tagline">Shangri-La's alpine lake and forest sanctuary</p>
-        <p class="tm-body">Mainland China's first national park, Pudacuo mirrors the sky in alpine lakes ringed by primeval forest and meadows — ablaze with azaleas in spring, 'the closest place to heaven'.</p>
-        <p class="tour-pair"><b>Pair with：</b>Forest-bathing wellness therapy (above 3,500 m — subject to medical advice)</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-lugu-lake" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Lugu Lake">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-lugu-lake.jpg" alt="Lugu Lake">
-      <div class="tour-modal-text">
-        <h4>Lugu Lake</h4>
-        <p class="tm-tagline">A crystal 'highland pearl' of the Mosuo people</p>
-        <p class="tm-body">At 2,690 m, Lugu Lake's waters are famously limpid, home to the matrilineal Mosuo community. Ride a pig-trough canoe, cross the Walking-Marriage Bridge and sleep beneath starry skies.</p>
-        <p class="tour-pair"><b>Pair with：</b>A quiet convalescent retreat + minority culture immersion</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-three-pagodas" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Three Pagodas of Chongsheng Temple">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-three-pagodas.jpg" alt="Three Pagodas of Chongsheng Temple">
-      <div class="tour-modal-text">
-        <h4>Three Pagodas of Chongsheng Temple</h4>
-        <p class="tm-tagline">Dali's thousand-year landmark mirrored in the lake</p>
-        <p class="tm-body">Built in the Nanzhao kingdom, the Three Pagodas have watched over Dali for a millennium; the 69-meter Qianxun Pagoda is among China's tallest surviving ancient towers, mirrored famously in the park lake.</p>
-        <p class="tour-pair"><b>Pair with：</b>A cultural mindfulness stop on a Dali wellness itinerary</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-yuanyang-terraces" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Yuanyang Rice Terraces">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-yuanyang-terraces.jpg" alt="Yuanyang Rice Terraces">
-      <div class="tour-modal-text">
-        <h4>Yuanyang Rice Terraces</h4>
-        <p class="tm-tagline">A millennium of Hani farming sculpted into the mountains</p>
-        <p class="tm-body">Hani farmers carved these terraces over 1,300 years — a UNESCO Cultural Landscape. In irrigation season the paddies mirror the sky in endless tiers, glowing at sunrise like sculptures of the earth.</p>
-        <p class="tour-pair"><b>Pair with：</b>A winter photography-focused wellness tour</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-xishuangbanna" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Xishuangbanna">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-xishuangbanna.jpg" alt="Xishuangbanna">
-      <div class="tour-modal-text">
-        <h4>Xishuangbanna</h4>
-        <p class="tm-tagline">China's only tropical rainforest kingdom</p>
-        <p class="tm-body">Home to China's only tropical-rainforest reserve, Xishuangbanna offers sky-tree canopy walks, wild elephants and the Dai Water-Splashing Festival — the perfect winter escape.</p>
-        <p class="tour-pair"><b>Pair with：</b>Winter warm-weather recuperation + TCM seasonal conditioning</p>
-      </div>
-    </div>
-  </div>
-  <div class="tour-modal" id="m-yunnan-tiger-leaping-gorge" aria-hidden="true">
-    <div class="tour-modal-backdrop" data-close></div>
-    <div class="tour-modal-box" role="dialog" aria-modal="true" aria-label="Tiger Leaping Gorge">
-      <button class="tour-modal-close" data-close aria-label="Close">×</button>
-      <img src="/assets/tours/yunnan-tiger-leaping-gorge.jpg" alt="Tiger Leaping Gorge">
-      <div class="tour-modal-text">
-        <h4>Tiger Leaping Gorge</h4>
-        <p class="tm-tagline">One of the world's deepest gorges on the Jinsha River</p>
-        <p class="tm-body">Where the Jinsha River thunders between Jade Dragon and Haba snow mountains, Tiger Leaping Gorge plunges 3,900 m — among the deepest canyons on earth and a world-class trekking route.</p>
-        <p class="tour-pair"><b>Pair with：</b>Light trekking only for guests in excellent health (professional assessment required)</p>
-      </div>
-    </div>
-  </div>
 <section class="strengths" id="strengths">
   <div class="container">
     <div class="reveal"><span class="eyebrow">Core Strengths</span>
@@ -1038,47 +876,5 @@
 <script src="/js/main.js"></script>
 <script src="/js/forms.js"></script>
 <script src="/js/consent.js"></script>
-
-<script>
-/* 医疗旅游板块：标签页切换 + 弹窗 + 横滑箭头 */
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.tour-tab').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var id = btn.getAttribute('data-tab');
-      document.querySelectorAll('.tour-tab').forEach(function (b) { b.classList.toggle('on', b === btn); });
-      document.querySelectorAll('.tour-panel').forEach(function (p) { p.hidden = (p.id !== 'tour-' + id); });
-    });
-  });
-  document.querySelectorAll('.tour-card').forEach(function (card) {
-    card.addEventListener('click', function () {
-      var m = document.getElementById(card.getAttribute('data-modal'));
-      if (m) { m.classList.add('open'); m.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-    });
-  });
-  document.querySelectorAll('.tour-modal [data-close]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      var m = el.closest('.tour-modal');
-      m.classList.remove('open'); m.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
-    });
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.tour-modal.open').forEach(function (m) {
-        m.classList.remove('open'); m.setAttribute('aria-hidden', 'true');
-      });
-      document.body.style.overflow = '';
-    }
-  });
-  document.querySelectorAll('.tour-strip-wrap').forEach(function (wrap) {
-    var strip = wrap.querySelector('.tour-strip');
-    wrap.querySelectorAll('.tour-arrow').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        strip.scrollBy({ left: (btn.classList.contains('left') ? -1 : 1) * strip.clientWidth * 0.8, behavior: 'smooth' });
-      });
-    });
-  });
-});
-</script>
 </body>
 </html>
