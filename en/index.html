@@ -762,6 +762,9 @@
     <p class="lead">Whether you're traveling for your health or exploring partnership opportunities, we're here to connect.</p></div>
     <div class="contact-grid">
       <form class="form-card reveal" id="form-patient" action="#" method="post">
+        <input type="hidden" name="_subject" value="[Feilan Global] Patient Consultation">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <h3>Free Consultation</h3>
         <div class="fs">Free of charge · Response within 24h</div>
         <div class="frow">
@@ -789,6 +792,9 @@
         <button class="btn" type="submit"><span>Book Free Consultation</span> →</button>
       </form>
       <form class="form-card reveal" id="form-partner" action="#" method="post">
+        <input type="hidden" name="_subject" value="[Feilan Global] Partnership Inquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <h3>Partnership / Local Representatives</h3>
         <div class="fs">Clinics · Agencies · Insurance Channels · Chambers</div>
         <div class="frow">
@@ -876,5 +882,58 @@
 <script src="/js/main.js"></script>
 <script src="/js/forms.js"></script>
 <script src="/js/consent.js"></script>
+
+<script>
+/* 联系表单：通过 FormSubmit 无刷新发送至指定邮箱 */
+(function () {
+  function feilanToast(msg) {
+    var box = document.getElementById('toast');
+    var msgEl = document.getElementById('toastMsg');
+    if (box && msgEl) {
+      msgEl.textContent = msg;
+      box.classList.add('show');
+      setTimeout(function () { box.classList.remove('show'); }, 3500);
+    } else {
+      alert(msg);
+    }
+  }
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (!f || (f.id !== 'form-patient' && f.id !== 'form-partner')) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var btn = f.querySelector('button[type="submit"]');
+    var orig = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span>Sending…</span>';
+    fetch('https://formsubmit.co/ajax/chansq2007@hotmail.com', {
+      method: 'POST',
+      body: new FormData(f),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) {
+      if (!r.ok) throw new Error();
+      btn.innerHTML = '<span>✓ Sent</span>';
+      var okMsg = (f.id === 'form-patient')
+        ? '提交成功！我们将在24小时内通过邮件回复您。'
+        : '合作意向已提交！我们将尽快与您联系。';
+      if (document.documentElement.lang === 'en') {
+        okMsg = (f.id === 'form-patient')
+          ? 'Submitted! We will reply by email within 24 hours.'
+          : 'Inquiry submitted! We will contact you shortly.';
+      }
+      feilanToast(okMsg);
+      f.reset();
+      setTimeout(function () { btn.innerHTML = orig; btn.disabled = false; }, 3000);
+    }).catch(function () {
+      btn.innerHTML = orig;
+      btn.disabled = false;
+      var errMsg = (document.documentElement.lang === 'en')
+        ? 'Submission failed. Please try again later or email us at contact@flgj.net.'
+        : '发送失败，请稍后重试，或直接邮件联系 contact@flgj.net。';
+      feilanToast(errMsg);
+    });
+  }, true);
+})();
+</script>
 </body>
 </html>
