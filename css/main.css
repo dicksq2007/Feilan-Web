@@ -321,8 +321,8 @@ footer{background:#032E57;color:#8FAEC8;padding:56px 0 30px}
   #consent-banner{left:10px;right:10px;bottom:10px;padding:18px}
 }
 .qr-card {
-    width: 250px !important; 
-    height: 250px !important; 
+    width: 200px !important; 
+    height: 200px !important; 
     display: flex !important; 
     align-items: center !important; 
     justify-content: center !important; 
