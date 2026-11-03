@@ -61,6 +61,9 @@
   .tour-pair{background:linear-gradient(92deg,#F2F8FD,#E9F3FA);border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--deep);margin:0}
   .tour-pair b{color:var(--blue)}
   @media(max-width:640px){.tour-region>summary{padding:16px}.tour-region-head{flex-wrap:wrap}.tour-row-body{padding-left:14px}}
+
+  /* 日期选择器适配深色表单 */
+  .form-card input[type="date"]{color-scheme:dark}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://flgj.net/#org", "name": "Hangzhou Feilan Global Travel Co., Ltd.", "url": "https://flgj.net/en/", "logo": "https://flgj.net/logo_mark.png", "address": {"@type": "PostalAddress", "streetAddress": "No. 189 Tongbei Road, Ningwei Street, Xiaoshan District", "addressLocality": "Hangzhou", "addressRegion": "Zhejiang", "addressCountry": "CN"}, "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "contact@flgj.net", "availableLanguage": ["en", "zh"]}}, {"@type": "MedicalBusiness", "@id": "https://flgj.net/#medbiz", "name": "Feilan Global", "parentOrganization": {"@id": "https://flgj.net/#org"}, "url": "https://flgj.net/en/", "description": "Medical information consultation and medical coordination services connecting international patients with healthcare providers in China.", "areaServed": ["Nordic countries", "Southeast Asia", "China"]}]}</script>
 </head>
@@ -782,7 +785,7 @@
             <option>TCM / Wellness</option>
             <option>Other Inquiry</option>
           </select></div>
-        <div class="field"><label>Expected Travel Time</label><input name="travel_time" placeholder="e.g. 2026-11"></div>
+        <div class="field"><label>Expected Travel Time</label><input type="date" name="travel_time" min="2025-01-01"></div>
         <div class="field"><label>Additional Details</label><textarea name="details" rows="3" placeholder="…"></textarea></div>
         <p class="form-disclaimer">Feilan Global provides medical information consultation and coordination services only. We are not a medical institution. All clinical decisions and treatments are provided solely by partner medical institutions and their licensed physicians. This website does not constitute medical advice.</p>
         <div class="field" style="display:flex;gap:10px;align-items:flex-start">
