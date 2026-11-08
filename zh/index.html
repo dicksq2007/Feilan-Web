@@ -66,10 +66,12 @@
   .form-card input[type="date"]{color-scheme:dark}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://flgj.net/#org", "name": "Hangzhou Feilan Global Travel Co., Ltd.", "url": "https://flgj.net/zh/", "logo": "https://flgj.net/logo_mark.png", "address": {"@type": "PostalAddress", "streetAddress": "No. 189 Tongbei Road, Ningwei Street, Xiaoshan District", "addressLocality": "Hangzhou", "addressRegion": "Zhejiang", "addressCountry": "CN"}, "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "contact@flgj.net", "availableLanguage": ["en", "zh"]}}, {"@type": "MedicalBusiness", "@id": "https://flgj.net/#medbiz", "name": "Feilan Global", "parentOrganization": {"@id": "https://flgj.net/#org"}, "url": "https://flgj.net/zh/", "description": "医疗信息咨询与就医协调服务，连接国际患者与中国医疗机构。", "areaServed": ["Nordic countries", "Southeast Asia", "China"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "我需要办理中国签证吗？", "acceptedAnswer": {"@type": "Answer", "text": "中国对 55 个国家实行 240 小时过境免签政策，多数医疗旅客可免签入境。我们的顾问会根据您的国籍和行程协助确认免签资格、规划停留时间；如需办理签证，我们也可提供相关材料支持。"}}, {"@type": "Question", "name": "我的病历资料需要什么语言？需要我自己翻译吗？", "acceptedAnswer": {"@type": "Answer", "text": "完全不需要。提交咨询后，您的专属顾问会协助收集病历资料，由具备医学背景的团队翻译整理，并递交合作医院完成预筛，全程无需您操心语言问题。"}}, {"@type": "Question", "name": "医疗费用如何支付？会不会有隐藏费用？", "acceptedAnswer": {"@type": "Answer", "text": "医院诊疗费用由医院按其正式书面报价直接收取；平台服务费在签约时一次性明确。方案如发生变更，我们会事先征得您的同意，绝无隐藏费用。支持国际信用卡、银行转账等方式；投保客户可使用保险直付。"}}, {"@type": "Question", "name": "我不懂中文，就医过程如何沟通？", "acceptedAnswer": {"@type": "Answer", "text": "全程无忧。由医学背景的留学生陪诊员提供一对一翻译，覆盖挂号、就诊、检查、取药与住院各环节；检查报告亦提供双语解读。"}}, {"@type": "Question", "name": "手术结束回国后，后续复诊怎么办？", "acceptedAnswer": {"@type": "Answer", "text": "会员可享术后远程随访、复查提醒与康复指导，必要时我们协助中国主治医生与您的当地医生沟通。您的健康档案在合规前提下跨境延续，回国后服务不断档。"}}, {"@type": "Question", "name": "网站上的费用介绍是最终价格吗？", "acceptedAnswer": {"@type": "Answer", "text": "网站所示均为一般性说明。具体项目的典型费用示例，以医院正式报价为准——您提交咨询后，顾问会在 24 小时内提供针对性的费用参考与行程建议。"}}, {"@type": "Question", "name": "我的健康数据会被如何保护？", "acceptedAnswer": {"@type": "Answer", "text": "我们遵循中国 PIPL、欧盟 GDPR 与美国 HIPAA 三重合规标准处理您的健康信息，仅在就医协调所必需的范围内使用，并加密存储。详细规则请参阅我们的《隐私政策》。"}}, {"@type": "Question", "name": "从咨询到赴华就医，通常需要多长时间？", "acceptedAnswer": {"@type": "Answer", "text": "轻医疗项目（体检、口腔、眼科等）通常 2–4 周即可完成全流程；重大手术类项目视专家排期与预筛情况而定，签约后顾问会为您提供明确的时间表。"}}]}</script>
 </head>
 <body>
 <div id="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent"></div>
 <div id="toast" role="status" aria-live="polite"><span class="visually-hidden">Notification: </span><span id="toastMsg"></span></div>
+<button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
 <nav id="nav">
   <div class="container bar">
     <a class="brand" href="/zh/">
@@ -245,7 +247,7 @@
       </div>
 
     </div>
-    <p class="cost-note reveal">* 费用因医院、病情、方案而异，具体以合作医院报价为准。</p>
+    <p class="cost-note reveal">* 费用因医院、病情、方案而异，具体以合作医院报价为准。典型项目费用示例，以医院正式报价为准。</p>
   </div>
 </section>
 <section class="tours" id="tours">
@@ -688,6 +690,21 @@
     </div>
   </div>
 </section>
+<section id="journey">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">服务流程</span>
+    <h2>六步开启您的中国疗愈之旅</h2>
+    <p class="lead">从第一次咨询到术后随访，每一步都有专人负责，全程透明可追踪。</p></div>
+    <div class="journey-grid reveal">
+      <div class="jstep"><span class="jdot">1</span><b>免费咨询</b><span>填写表单或发送邮件，24 小时内获得专属顾问回复。</span></div>
+      <div class="jstep"><span class="jdot">2</span><b>病历翻译与预筛</b><span>医学背景团队整理、翻译您的病历资料，完成医院预筛。</span></div>
+      <div class="jstep"><span class="jdot">3</span><b>远程专家会诊</b><span>抵华前与三甲专家视频会诊，明确诊疗方向。</span></div>
+      <div class="jstep"><span class="jdot">4</span><b>方案与报价确认</b><span>获取医院正式书面报价与方案，透明无隐藏费用。</span></div>
+      <div class="jstep"><span class="jdot">5</span><b>签证与行程定制</b><span>240 小时过境免签或签证协助，定制医疗+旅游行程。</span></div>
+      <div class="jstep"><span class="jdot">6</span><b>到院就医与随访</b><span>专人全程陪诊，术后回国仍享远程随访与复查提醒。</span></div>
+    </div>
+  </div>
+</section>
 <section id="data" style="background:linear-gradient(180deg,#fff,var(--mist))">
   <div class="container">
     <div class="reveal"><span class="eyebrow">数据资产与技术</span>
@@ -727,15 +744,16 @@
         <div class="dir-row">
           <div class="dir in">→ 国内高净值客户对接三甲医院国际医疗部 / 特需门诊 / 涉外病房：国际水准服务 + 保险直付结算</div>
         </div>
+        <p style="font-size:12px;color:#8899AA;margin-top:14px">* 以上国内医院资源以实际签约情况为准。</p>
       </div>
       <div class="netcard reveal">
-        <h3>国际合作网络（送往国外）</h3>
-        <div class="nsub">世界顶级专科</div>
+        <h3>国际转诊资源（送往国外）</h3>
+        <div class="nsub">欧美顶级专科 · 转诊方向示例</div>
         <div class="ihosp"><span class="dot2"></span><div><b>Mayo Clinic 梅奥诊所</b><span>美国领先的综合医院</span></div></div>
         <div class="ihosp"><span class="dot2"></span><div><b>Cleveland Clinic 克利夫兰诊所</b><span>心脏外科全球领先</span></div></div>
         <div class="ihosp"><span class="dot2"></span><div><b>Johns Hopkins 约翰霍普金斯</b><span>神经外科与肿瘤学顶尖</span></div></div>
         <div class="dir-row">
-          <div class="dir out">→ 复杂罕见病例送往欧美顶尖专科，获取国外医院返佣</div>
+          <div class="dir out">→ 复杂罕见病例协助转诊欧美顶尖专科资源（以实际转诊安排为准）</div>
         </div>
         <div class="net-note"><b>签约目标（持续完成中）：</b><span>3 年覆盖国外私立诊所 30,000 家 · 国内三甲医院 1,000 家</span></div>
       </div>
@@ -757,6 +775,47 @@
       <div class="tcard reveal"><img class="tphoto" src="/assets/team/gu-jingjun.png" alt="Gu Jingjun 顾静军" width="96" height="96" loading="lazy"><h4>Gu Jingjun 顾静军</h4><div class="role">联合创始人 / CTO</div><p>18 年互联网医疗研发经验，曾任上市医疗公司技术负责人，具备省级健康医疗大数据平台建设经验，拥有 3 项相关专利，精通 HIPAA、GDPR、PIPL 跨境数据合规。</p></div>
       <div class="tcard reveal"><img class="tphoto" src="/assets/team/david-qian.png" alt="David Qian" width="96" height="96" loading="lazy"><h4>David Qian</h4><div class="role">联合创始人 / 北欧区负责人</div><p>旅居芬兰 15 年，曾任芬兰知名医疗咨询公司合伙人，深度链接北欧私人诊所与保险资源，精通四国语言，熟悉北欧医疗体系与商务文化。</p></div>
       <div class="tcard reveal"><img class="tphoto" src="/assets/team/chen-shengqian.png" alt="Chen Shengqian 陈胜潜" width="96" height="96" loading="lazy"><h4>Chen Shengqian 陈胜潜</h4><div class="role">联合创始人 / 国际市场负责人</div><p>深耕国际医疗项目运营，主导多项国家及省级重点项目，在亚洲区域具备深厚资源支持与跨境协作能力。</p></div>
+    </div>
+  </div>
+</section>
+<section class="faq" id="faq" style="background:linear-gradient(180deg,#fff,var(--mist))">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">常见问题</span>
+    <h2>您关心的，都在这里</h2>
+    <p class="lead">关于签证、语言、费用与术后照护的高频疑问。没有找到答案？欢迎直接联系我们。</p></div>
+    <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>我需要办理中国签证吗？</summary>
+      <div class="faq-a">中国对 55 个国家实行 240 小时过境免签政策，多数医疗旅客可免签入境。我们的顾问会根据您的国籍和行程协助确认免签资格、规划停留时间；如需办理签证，我们也可提供相关材料支持。</div>
+    </details>
+    <details class="faq-item">
+      <summary>我的病历资料需要什么语言？需要我自己翻译吗？</summary>
+      <div class="faq-a">完全不需要。提交咨询后，您的专属顾问会协助收集病历资料，由具备医学背景的团队翻译整理，并递交合作医院完成预筛，全程无需您操心语言问题。</div>
+    </details>
+    <details class="faq-item">
+      <summary>医疗费用如何支付？会不会有隐藏费用？</summary>
+      <div class="faq-a">医院诊疗费用由医院按其正式书面报价直接收取；平台服务费在签约时一次性明确。方案如发生变更，我们会事先征得您的同意，绝无隐藏费用。支持国际信用卡、银行转账等方式；投保客户可使用保险直付。</div>
+    </details>
+    <details class="faq-item">
+      <summary>我不懂中文，就医过程如何沟通？</summary>
+      <div class="faq-a">全程无忧。由医学背景的留学生陪诊员提供一对一翻译，覆盖挂号、就诊、检查、取药与住院各环节；检查报告亦提供双语解读。</div>
+    </details>
+    <details class="faq-item">
+      <summary>手术结束回国后，后续复诊怎么办？</summary>
+      <div class="faq-a">会员可享术后远程随访、复查提醒与康复指导，必要时我们协助中国主治医生与您的当地医生沟通。您的健康档案在合规前提下跨境延续，回国后服务不断档。</div>
+    </details>
+    <details class="faq-item">
+      <summary>网站上的费用介绍是最终价格吗？</summary>
+      <div class="faq-a">网站所示均为一般性说明。具体项目的典型费用示例，以医院正式报价为准——您提交咨询后，顾问会在 24 小时内提供针对性的费用参考与行程建议。</div>
+    </details>
+    <details class="faq-item">
+      <summary>我的健康数据会被如何保护？</summary>
+      <div class="faq-a">我们遵循中国 PIPL、欧盟 GDPR 与美国 HIPAA 三重合规标准处理您的健康信息，仅在就医协调所必需的范围内使用，并加密存储。详细规则请参阅我们的《隐私政策》。</div>
+    </details>
+    <details class="faq-item">
+      <summary>从咨询到赴华就医，通常需要多长时间？</summary>
+      <div class="faq-a">轻医疗项目（体检、口腔、眼科等）通常 2–4 周即可完成全流程；重大手术类项目视专家排期与预筛情况而定，签约后顾问会为您提供明确的时间表。</div>
+    </details>
     </div>
   </div>
 </section>
@@ -829,7 +888,11 @@
             </select></div>
         </div>
         <div class="field"><label>留言</label><textarea name="message" rows="3" placeholder="…"></textarea></div>
-        <button class="btn" type="submit"><span>提交合作意向</span> →</button>
+                <div class="field" style="display:flex;gap:10px;align-items:flex-start">
+          <input type="checkbox" id="partner_consent" name="partner_consent" value="yes" required style="width:auto;margin-top:5px">
+          <label for="partner_consent" style="font-weight:500;color:#D7EAF7;font-size:12.5px;margin:0">我已阅读并同意<a href="/privacy-policy.html" target="_blank" style="color:#8FC6EE;text-decoration:underline">《隐私政策》</a>，同意飞澜国际为处理合作洽谈之目的收集我的联系信息，并知悉表单数据将经由 FormSubmit 第三方服务传输至平台邮箱。</label>
+        </div>
+<button class="btn" type="submit"><span>提交合作意向</span> →</button>
       </form>
     </div>
     <div class="contact-info reveal">
@@ -865,6 +928,7 @@
         </div>
         <div>
           <h5>公司</h5>
+          <a href="#faq">常见问题</a>
           <a href="#escort">陪诊服务</a>
           <a href="#data">数据与合规</a>
           <a href="#contact">联系我们</a>
