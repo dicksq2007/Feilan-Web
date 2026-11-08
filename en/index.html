@@ -66,10 +66,12 @@
   .form-card input[type="date"]{color-scheme:dark}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://flgj.net/#org", "name": "Hangzhou Feilan Global Travel Co., Ltd.", "url": "https://flgj.net/en/", "logo": "https://flgj.net/logo_mark.png", "address": {"@type": "PostalAddress", "streetAddress": "No. 189 Tongbei Road, Ningwei Street, Xiaoshan District", "addressLocality": "Hangzhou", "addressRegion": "Zhejiang", "addressCountry": "CN"}, "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "contact@flgj.net", "availableLanguage": ["en", "zh"]}}, {"@type": "MedicalBusiness", "@id": "https://flgj.net/#medbiz", "name": "Feilan Global", "parentOrganization": {"@id": "https://flgj.net/#org"}, "url": "https://flgj.net/en/", "description": "Medical information consultation and medical coordination services connecting international patients with healthcare providers in China.", "areaServed": ["Nordic countries", "Southeast Asia", "China"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a visa for China?", "acceptedAnswer": {"@type": "Answer", "text": "China offers 240-hour visa-free transit for travelers from 55 countries, which covers most medical travelers. Our advisors help confirm your eligibility and plan your stay; if a visa is required, we provide supporting materials."}}, {"@type": "Question", "name": "What language do my medical records need to be in? Do I translate them myself?", "acceptedAnswer": {"@type": "Answer", "text": "Not at all. After you submit an inquiry, your dedicated advisor helps collect your records, and our medically trained team translates and forwards them to partner hospitals for pre-screening."}}, {"@type": "Question", "name": "How do I pay for treatment? Are there any hidden fees?", "acceptedAnswer": {"@type": "Answer", "text": "Hospital fees are charged directly by the hospital according to its official written quote; our service fee is fixed at signing. Any plan changes require your prior approval — there are no hidden fees. International cards and bank transfers are accepted; insured guests may use direct billing."}}, {"@type": "Question", "name": "I don’t speak Chinese — how will I communicate during treatment?", "acceptedAnswer": {"@type": "Answer", "text": "Worry-free throughout. A medically trained student escort provides one-on-one translation for registration, consultations, examinations, prescriptions and hospitalization, plus bilingual report interpretation."}}, {"@type": "Question", "name": "What happens after I fly home — how do I get follow-up care?", "acceptedAnswer": {"@type": "Answer", "text": "Members enjoy post-operative remote follow-up, check-up reminders and rehabilitation guidance. When needed, we help your Chinese physicians communicate with your local doctors. Your health records continue across borders, compliantly."}}, {"@type": "Question", "name": "Are the prices shown on the website final?", "acceptedAnswer": {"@type": "Answer", "text": "All figures on this site are general descriptions. Typical cost examples are for reference only — final pricing is confirmed in the hospital’s official written quote. After you inquire, an advisor provides tailored cost references within 24 hours."}}, {"@type": "Question", "name": "How is my health data protected?", "acceptedAnswer": {"@type": "Answer", "text": "We process your health information under triple compliance — China PIPL, EU GDPR and US HIPAA — use it only to the extent necessary for medical coordination, and store it encrypted. Please see our Privacy Policy for details."}}, {"@type": "Question", "name": "How long does the whole process take, from inquiry to treatment in China?", "acceptedAnswer": {"@type": "Answer", "text": "Light medical services (check-ups, dental, ophthalmology) can usually be arranged within 2–4 weeks; major surgery depends on specialist scheduling and pre-screening. Your advisor provides a clear timeline after signing."}}]}</script>
 </head>
 <body>
 <div id="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent"></div>
 <div id="toast" role="status" aria-live="polite"><span class="visually-hidden">Notification: </span><span id="toastMsg"></span></div>
+<button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
 <nav id="nav">
   <div class="container bar">
     <a class="brand" href="/en/">
@@ -244,7 +246,7 @@
       </div>
 
     </div>
-    <p class="cost-note reveal">* Costs vary by hospital, condition, and treatment plan; actual quotes are provided by partner hospitals.</p>
+    <p class="cost-note reveal">* Costs vary by hospital, condition, and treatment plan; actual quotes are provided by partner hospitals. Typical cost examples are for reference only; final pricing is confirmed in the hospital&#x27;s official written quote.</p>
   </div>
 </section>
 <section class="tours" id="tours">
@@ -687,6 +689,21 @@
     </div>
   </div>
 </section>
+<section id="journey">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">How It Works</span>
+    <h2>Six Steps to Your Healing Journey in China</h2>
+    <p class="lead">From your first inquiry to post-operative follow-up, every step has a dedicated owner — transparent and trackable throughout.</p></div>
+    <div class="journey-grid reveal">
+      <div class="jstep"><span class="jdot">1</span><b>Free Consultation</b><span>Submit the form or email us — a dedicated advisor replies within 24 hours.</span></div>
+      <div class="jstep"><span class="jdot">2</span><b>Records & Pre-screening</b><span>Our medically trained team organizes and translates your records for hospital pre-screening.</span></div>
+      <div class="jstep"><span class="jdot">3</span><b>Remote Expert Consultation</b><span>Video consultation with Grade 3A specialists before you travel.</span></div>
+      <div class="jstep"><span class="jdot">4</span><b>Plan & Quote Confirmation</b><span>Receive the hospital’s official written quote and treatment plan — transparent, no hidden fees.</span></div>
+      <div class="jstep"><span class="jdot">5</span><b>Visa & Itinerary</b><span>240-hour visa-free transit or visa assistance, plus a tailored medical + travel itinerary.</span></div>
+      <div class="jstep"><span class="jdot">6</span><b>Treatment & Follow-up</b><span>Escorted hospital visits and long-term remote follow-up after you return home.</span></div>
+    </div>
+  </div>
+</section>
 <section id="data" style="background:linear-gradient(180deg,#fff,var(--mist))">
   <div class="container">
     <div class="reveal"><span class="eyebrow">Data Asset &amp; Technology</span>
@@ -726,15 +743,16 @@
         <div class="dir-row">
           <div class="dir in">→ Domestic HNW clients → Grade 3A International Medical Depts. / VIP wards: international-grade service + direct insurance billing</div>
         </div>
+        <p style="font-size:12px;color:#8899AA;margin-top:14px">* Domestic hospital resources listed above are subject to actual signed agreements.</p>
       </div>
       <div class="netcard reveal">
-        <h3>International Network (Outbound Abroad)</h3>
-        <div class="nsub">World-leading Specialists</div>
+        <h3>International Referral Resources (Outbound)</h3>
+        <div class="nsub">Top US/EU Specialists · Referral Directions</div>
         <div class="ihosp"><span class="dot2"></span><div><b>Mayo Clinic</b><span>America&#x27;s leading comprehensive hospital</span></div></div>
         <div class="ihosp"><span class="dot2"></span><div><b>Cleveland Clinic</b><span>Global leader in cardiac surgery</span></div></div>
         <div class="ihosp"><span class="dot2"></span><div><b>Johns Hopkins</b><span>Top-tier neurosurgery &amp; oncology</span></div></div>
         <div class="dir-row">
-          <div class="dir out">→ Complex &amp; rare cases → top US/EU specialists, earning outbound referral commissions</div>
+          <div class="dir out">→ Complex &amp; rare cases assisted to top US/EU specialists (subject to actual referral arrangements)</div>
         </div>
         <div class="net-note"><b>Signing goals (in progress): </b><span>30,000 overseas private clinics · 1,000 domestic Grade 3A hospitals within 3 years</span></div>
       </div>
@@ -756,6 +774,47 @@
       <div class="tcard reveal"><img class="tphoto" src="/assets/team/gu-jingjun.png" alt="Gu Jingjun 顾静军" width="96" height="96" loading="lazy"><h4>Gu Jingjun 顾静军</h4><div class="role">Co-Founder / CTO</div><p>18 years in internet healthcare R&amp;D; former technical lead at a listed medical company. Built provincial-level health big-data platforms; holds 3 patents. Proficient in HIPAA, GDPR &amp; PIPL compliance.</p></div>
       <div class="tcard reveal"><img class="tphoto" src="/assets/team/david-qian.png" alt="David Qian" width="96" height="96" loading="lazy"><h4>David Qian</h4><div class="role">Co-Founder / Nordic Region Lead</div><p>Lived in Finland for 15 years; former partner at a leading Finnish medical consulting firm. Deeply connected with Nordic private clinics and insurance resources. Fluent in four languages.</p></div>
       <div class="tcard reveal"><img class="tphoto" src="/assets/team/chen-shengqian.png" alt="Chen Shengqian 陈胜潜" width="96" height="96" loading="lazy"><h4>Chen Shengqian 陈胜潜</h4><div class="role">Co-Founder / International Market Lead</div><p>Deeply engaged in international medical project operations; has led multiple national and provincial key projects, with strong resources and cross-border collaboration capabilities, particularly in Asia.</p></div>
+    </div>
+  </div>
+</section>
+<section class="faq" id="faq" style="background:linear-gradient(180deg,#fff,var(--mist))">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">FAQ</span>
+    <h2>Answers to Your Questions</h2>
+    <p class="lead">Frequent questions about visas, language, pricing and aftercare. Can’t find your answer? Feel free to contact us.</p></div>
+    <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>Do I need a visa for China?</summary>
+      <div class="faq-a">China offers 240-hour visa-free transit for travelers from 55 countries, which covers most medical travelers. Our advisors help confirm your eligibility and plan your stay; if a visa is required, we provide supporting materials.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What language do my medical records need to be in? Do I translate them myself?</summary>
+      <div class="faq-a">Not at all. After you submit an inquiry, your dedicated advisor helps collect your records, and our medically trained team translates and forwards them to partner hospitals for pre-screening.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I pay for treatment? Are there any hidden fees?</summary>
+      <div class="faq-a">Hospital fees are charged directly by the hospital according to its official written quote; our service fee is fixed at signing. Any plan changes require your prior approval — there are no hidden fees. International cards and bank transfers are accepted; insured guests may use direct billing.</div>
+    </details>
+    <details class="faq-item">
+      <summary>I don’t speak Chinese — how will I communicate during treatment?</summary>
+      <div class="faq-a">Worry-free throughout. A medically trained student escort provides one-on-one translation for registration, consultations, examinations, prescriptions and hospitalization, plus bilingual report interpretation.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What happens after I fly home — how do I get follow-up care?</summary>
+      <div class="faq-a">Members enjoy post-operative remote follow-up, check-up reminders and rehabilitation guidance. When needed, we help your Chinese physicians communicate with your local doctors. Your health records continue across borders, compliantly.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Are the prices shown on the website final?</summary>
+      <div class="faq-a">All figures on this site are general descriptions. Typical cost examples are for reference only — final pricing is confirmed in the hospital’s official written quote. After you inquire, an advisor provides tailored cost references within 24 hours.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How is my health data protected?</summary>
+      <div class="faq-a">We process your health information under triple compliance — China PIPL, EU GDPR and US HIPAA — use it only to the extent necessary for medical coordination, and store it encrypted. Please see our Privacy Policy for details.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How long does the whole process take, from inquiry to treatment in China?</summary>
+      <div class="faq-a">Light medical services (check-ups, dental, ophthalmology) can usually be arranged within 2–4 weeks; major surgery depends on specialist scheduling and pre-screening. Your advisor provides a clear timeline after signing.</div>
+    </details>
     </div>
   </div>
 </section>
@@ -828,7 +887,11 @@
             </select></div>
         </div>
         <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="…"></textarea></div>
-        <button class="btn" type="submit"><span>Submit Inquiry</span> →</button>
+                <div class="field" style="display:flex;gap:10px;align-items:flex-start">
+          <input type="checkbox" id="partner_consent" name="partner_consent" value="yes" required style="width:auto;margin-top:5px">
+          <label for="partner_consent" style="font-weight:500;color:#D7EAF7;font-size:12.5px;margin:0">I have read and agree to the <a href="/privacy-policy.html" target="_blank" style="color:#8FC6EE;text-decoration:underline">Privacy Policy</a>. I consent to Feilan Global collecting my contact details for partnership communication, and I understand the form data is transmitted via the third-party FormSubmit service to our mailbox.</label>
+        </div>
+<button class="btn" type="submit"><span>Submit Inquiry</span> →</button>
       </form>
     </div>
     <div class="contact-info reveal">
@@ -864,6 +927,7 @@
         </div>
         <div>
           <h5>Company</h5>
+          <a href="#faq">FAQ</a>
           <a href="#escort">Escort Service</a>
           <a href="#data">Data &amp; Compliance</a>
           <a href="#contact">Contact</a>
