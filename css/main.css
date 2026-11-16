@@ -412,3 +412,32 @@ footer{background:#032E57;color:#8FAEC8;padding:56px 0 30px}
   .svc-visual svg.svc-art{width:54%;max-width:190px}
   .svc:hover .svc-visual svg.svc-art{transform:none}
 }
+
+/* ===== Corporate Film · 企业宣传片（方案C：独立版块+点击弹窗播放） ===== */
+.film{background:linear-gradient(180deg,#fff,var(--mist))}
+.film-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:56px;align-items:center}
+.film-play{position:relative;display:block;width:100%;padding:0;border:0;border-radius:20px;overflow:hidden;cursor:pointer;background:var(--deep);box-shadow:0 24px 60px rgba(0,61,122,.22);transition:transform .35s,box-shadow .35s}
+.film-play img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.film-play::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,61,122,.45))}
+.film-play:hover{transform:translateY(-4px);box-shadow:0 30px 70px rgba(0,61,122,.30)}
+.film-play-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(0,61,122,.35);transition:transform .3s,background .3s}
+.film-play-btn svg{width:32px;height:32px;fill:var(--blue);margin-left:5px}
+.film-play:hover .film-play-btn{transform:translate(-50%,-50%) scale(1.08);background:#fff}
+.film-copy p{margin:0 0 28px;font-size:15.5px;line-height:1.85;color:#4A6076;max-width:520px}
+.film-cta .film-ico{width:18px;height:18px;fill:currentColor}
+@media(max-width:900px){.film-grid{grid-template-columns:1fr;gap:34px}section.film{padding:60px 0}}
+@media(max-width:640px){.film-play{border-radius:16px}.film-play-btn{width:62px;height:62px}.film-play-btn svg{width:24px;height:24px;margin-left:4px}.film-copy p{font-size:14.5px}}
+/* ===== Film modal · 宣传片弹窗 ===== */
+.film-modal{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:24px}
+.film-modal[hidden]{display:none}
+.film-modal-backdrop{position:absolute;inset:0;background:rgba(6,24,44,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:filmFade .25s ease}
+.film-modal-box{position:relative;z-index:1;width:min(960px,100%);animation:filmZoom .3s ease}
+.film-modal-video{border-radius:16px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.film-modal-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.film-modal-close{position:absolute;top:-48px;right:0;width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,.45);background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1;cursor:pointer;transition:.25s}
+.film-modal-close:hover{background:#fff;color:var(--deep)}
+body.film-open{overflow:hidden}
+@keyframes filmFade{from{opacity:0}to{opacity:1}}
+@keyframes filmZoom{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@media(max-width:640px){.film-modal{padding:0 12px}.film-modal-box{width:100%}.film-modal-close{top:-46px;right:4px}}
+@media(max-width:480px){.film-modal-video{border-radius:12px}}
