@@ -72,6 +72,17 @@
 <div id="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent"></div>
 <div id="toast" role="status" aria-live="polite"><span class="visually-hidden">Notification: </span><span id="toastMsg"></span></div>
 <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+<div class="film-modal" id="filmModal" role="dialog" aria-modal="true" aria-label="飞澜国际企业宣传片" hidden>
+  <div class="film-modal-backdrop" data-film-close></div>
+  <div class="film-modal-box">
+    <button class="film-modal-close" type="button" data-film-close aria-label="关闭视频">&times;</button>
+    <div class="film-modal-video">
+      <video id="filmVideo" controls preload="none" playsinline poster="/assets/video/feilan-intro-poster.jpg">
+        <source src="/assets/video/feilan-intro.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
 <nav id="nav">
   <div class="container bar">
     <a class="brand" href="/zh/">
@@ -172,6 +183,25 @@
     <div class="reveal"><span class="eyebrow">为什么选择飞澜</span>
     <h2>我们对每一位托付者的四项承诺</h2></div>
     <div class="values-grid"><div class="vcard reveal"><span class="num">01</span><h3>来宾即家人</h3><p>以真诚服务，温暖每一位异国求医者，让文化差异成为共情的起点。</p></div><div class="vcard reveal"><span class="num">02</span><h3>专业即尊严</h3><p>以高标准守护就医体验，以透明定价守护信任。</p></div><div class="vcard reveal"><span class="num">03</span><h3>开放即力量</h3><p>跨越国界，多元共生。我们致力于成为连接全球健康需求与中国医疗的桥梁。</p></div><div class="vcard reveal"><span class="num">04</span><h3>数据即守护</h3><p>以合规底线守护信任，让数据跨越周期，延续长情的生命关怀。</p></div></div>
+  </div>
+</section>
+<section class="film" id="film">
+  <div class="container film-grid">
+    <div class="film-media reveal">
+      <button class="film-play" type="button" data-film-open aria-label="播放飞澜国际企业宣传片">
+        <img src="/assets/video/feilan-intro-poster.jpg" alt="飞澜国际企业宣传片封面" loading="lazy" width="1600" height="1000">
+        <span class="film-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </button>
+    </div>
+    <div class="film-copy reveal">
+      <span class="eyebrow">企业宣传片</span>
+      <h2>90 秒了解飞澜国际</h2>
+      <p>90 秒，了解飞澜国际如何连接全球健康寻求者与中国顶尖三甲医院 &mdash;&mdash; 以及为什么每一次跨境医疗，都成为值得托付的生命旅程。</p>
+      <button class="btn btn-primary film-cta" type="button" data-film-open>
+        <svg class="film-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+        <span>观看宣传片</span>
+      </button>
+    </div>
   </div>
 </section>
 <section class="services" id="services">
