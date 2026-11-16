@@ -72,6 +72,17 @@
 <div id="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent"></div>
 <div id="toast" role="status" aria-live="polite"><span class="visually-hidden">Notification: </span><span id="toastMsg"></span></div>
 <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+<div class="film-modal" id="filmModal" role="dialog" aria-modal="true" aria-label="Feilan Global corporate film" hidden>
+  <div class="film-modal-backdrop" data-film-close></div>
+  <div class="film-modal-box">
+    <button class="film-modal-close" type="button" data-film-close aria-label="Close video">&times;</button>
+    <div class="film-modal-video">
+      <video id="filmVideo" controls preload="none" playsinline poster="/assets/video/feilan-intro-poster.jpg">
+        <source src="/assets/video/feilan-intro.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
 <nav id="nav">
   <div class="container bar">
     <a class="brand" href="/en/">
@@ -172,6 +183,25 @@
     <div class="reveal"><span class="eyebrow">Why Choose Feilan</span>
     <h2>Four promises we make to every guest</h2></div>
     <div class="values-grid"><div class="vcard reveal"><span class="num">01</span><h3>Guests as Family</h3><p>We warm every guest from afar with the sincerity of our service, turning cultural differences into starting points for empathy.</p></div><div class="vcard reveal"><span class="num">02</span><h3>Excellence as Dignity</h3><p>With top-tier hospital standards, we safeguard your experience; with transparent pricing, we safeguard trust.</p></div><div class="vcard reveal"><span class="num">03</span><h3>Openness as Strength</h3><p>Across all borders, symbiotic growth. We are a bridge connecting global health seekers to China&#x27;s healthcare system.</p></div><div class="vcard reveal"><span class="num">04</span><h3>Data as Stewardship</h3><p>With compliance as our bedrock, we protect your information across every cycle of your health journey.</p></div></div>
+  </div>
+</section>
+<section class="film" id="film">
+  <div class="container film-grid">
+    <div class="film-media reveal">
+      <button class="film-play" type="button" data-film-open aria-label="Play the Feilan Global corporate film">
+        <img src="/assets/video/feilan-intro-poster.jpg" alt="Feilan Global corporate film cover" loading="lazy" width="1600" height="1000">
+        <span class="film-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </button>
+    </div>
+    <div class="film-copy reveal">
+      <span class="eyebrow">Corporate Film</span>
+      <h2>Watch Our Story</h2>
+      <p>In 90 seconds, discover how Feilan Global connects international health seekers with China&#x27;s finest hospitals &mdash; and why every cross-border journey with us becomes a life experience worth entrusting.</p>
+      <button class="btn btn-primary film-cta" type="button" data-film-open>
+        <svg class="film-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+        <span>Watch the Film</span>
+      </button>
+    </div>
   </div>
 </section>
 <section class="services" id="services">
